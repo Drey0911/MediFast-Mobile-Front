@@ -1,242 +1,131 @@
-# MediFast
-
 <p align="center">
-  <img src="img/logo-green.png" alt="MediFast Logo" width="300">
+  <img src="./img/logo-green.png" alt="MediFast logo" width="260"/>
 </p>
 
-## Tecnologías
+<h1 align="center">MediFast · App móvil</h1>
 
 <p align="center">
-   <a href="https://reactnative.dev/"><img src="https://img.shields.io/badge/React%20Native-0.73%2B-61DAFB?logo=react&logoColor=white" alt="React Native"></a>
-   <a href="https://reactnavigation.org/"><img src="https://img.shields.io/badge/React%20Navigation-6.0%2B-3C3C3D?logo=react&logoColor=white" alt="React Navigation"></a>
-   <a href="https://axios-http.com/"><img src="https://img.shields.io/badge/Axios-HTTP%20Client-671DDF?logo=axios&logoColor=white" alt="Axios"></a>
-   <a href="https://socket.io/"><img src="https://img.shields.io/badge/Socket.IO-Realtime-2E7D32?logo=socketdotio&logoColor=white" alt="Socket.IO"></a>
-   <a href="https://react-native-async-storage.github.io/async-storage/"><img src="https://img.shields.io/badge/AsyncStorage-LocalDB-FF6B6B?logo=react&logoColor=white" alt="AsyncStorage"></a>
-   <a href="https://oblador.github.io/react-native-vector-icons/"><img src="https://img.shields.io/badge/Vector%20Icons-UI-8B5CF6?logo=react&logoColor=white" alt="Vector Icons"></a>
-   <a href="https://jwt.io/"><img src="https://img.shields.io/badge/JWT-Auth-FFA500?logo=jwt&logoColor=white" alt="JWT"></a>
-   <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-Language-3178C6?logo=typescript&logoColor=white" alt="TypeScript"></a>
+  App para consultar medicamentos y agendar su recolección en el dispensario.<br/>
+  <sub>App to check medications and schedule their pickup at the dispensary.</sub>
 </p>
 
-## Descripción
+<p align="center">
+  <img src="https://img.shields.io/badge/platform-Android-3DDC84?style=flat&logo=android&logoColor=white" alt="Android"/>
+  <img src="https://img.shields.io/badge/type-Degree%20project-22C55E?style=flat" alt="Degree project"/>
+  <img src="https://img.shields.io/badge/license-All%20rights%20reserved-6B7280?style=flat" alt="All rights reserved"/>
+</p>
 
-MediFast es una aplicación móvil desarrollada en React Native que facilita la gestión de medicamentos y recolecciones en dispensarios médicos. La aplicación permite a los usuarios consultar medicamentos disponibles, solicitar recolecciones, gestionar favoritos y acceder a su historial de solicitudes.
+<p align="center">
+  <a href="#español">Español</a> · <a href="#english">English</a> ·
+  <a href="https://github.com/Drey0911/TG-MediFast-Dispensario-BACKEND">Backend</a>
+</p>
 
-## Arquitectura
+## Tech stack
 
-MediFast está desarrollado siguiendo el patrón de arquitectura MVP (Modelo-Vista-Presentador):
+<p align="center">
+  <img src="https://img.shields.io/badge/React%20Native-0.81-61DAFB?style=flat&logo=react&logoColor=black" alt="React Native 0.81"/>
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/React%20Navigation-7-6B52AE?style=flat" alt="React Navigation 7"/>
+  <img src="https://img.shields.io/badge/Axios-HTTP-5A29E4?style=flat&logo=axios&logoColor=white" alt="Axios"/>
+  <br/>
+  <img src="https://img.shields.io/badge/Socket.IO-Realtime-010101?style=flat&logo=socketdotio&logoColor=white" alt="Socket.IO"/>
+  <img src="https://img.shields.io/badge/AsyncStorage-Local-FF6B6B?style=flat" alt="AsyncStorage"/>
+  <img src="https://img.shields.io/badge/JWT-Auth-000000?style=flat&logo=jsonwebtokens&logoColor=white" alt="JWT"/>
+</p>
 
-## Importante (APi Base)
+## Screenshots
 
-Al ser desarrollada con una arquitectura desacoplada fullstack (Backend - APIREST - Frontend) en el archivo apiBase.ts
-debe ir la URL del backend, sea local (localhost), con tunel (Ngrok o similares) o el URL del deployment.
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://drey.is-a.dev/img/projects/project2/project2-1.png" alt="Login and sign up"/>
+      <br/><b>Acceso · Sign in</b><br/><sub>Inicio de sesión y registro</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="https://drey.is-a.dev/img/projects/project2/project2-2.png" alt="Home and medications"/>
+      <br/><b>Inicio y medicamentos · Home and medications</b><br/><sub>Módulos principales y catálogo con disponibilidad</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://drey.is-a.dev/img/projects/project2/project2-4.png" alt="Pickup package"/>
+      <br/><b>Paquete de recolección · Pickup package</b><br/><sub>Stock por sede, cantidad, fecha y hora</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="https://drey.is-a.dev/img/projects/project2/project2-5.png" alt="Pickups and favorites"/>
+      <br/><b>Recolecciones y favoritos · Pickups and favorites</b><br/><sub>Seguimiento de solicitudes y alertas</sub>
+    </td>
+  </tr>
+</table>
 
-### Modelo (Models)
-Contiene las clases de datos y la lógica de negocio:
-- `User.ts`: Modelo para la información del usuario
-- `Medicamento.ts`: Modelo para los medicamentos
-- `Recoleccion.ts`: Modelo para las solicitudes de recolección
-- `Favorito.ts`: Modelo para los medicamentos favoritos
+---
 
-### Vista (Views)
-Contiene las interfaces de usuario divididas en:
+## Español
 
-#### Componentes (Components)
-- `Alert.tsx`: Componente para mostrar alertas
-- `BrandHeader.tsx`: Encabezado con la marca de la aplicación
-- `ButtonModules.tsx`: Botones para los módulos principales
-- `CustomButton.tsx`: Botón personalizado reutilizable
-- `CustomInput.tsx`: Campo de entrada personalizado
-- `Loading.tsx`: Componente de carga
-- `LoginForm.tsx`: Formulario de inicio de sesión
-- `Splash.tsx`: Pantalla de carga inicial
+> App móvil del proyecto de grado MediFast. Los usuarios consultan medicamentos, ven su disponibilidad por sede, arman un paquete y agendan la recolección. Los cambios llegan en tiempo real desde el [backend](https://github.com/Drey0911/TG-MediFast-Dispensario-BACKEND).
 
-#### Pantallas (Screens)
-- `LoginScreen.tsx`: Pantalla de inicio de sesión
-- `RegisterScreen.tsx`: Pantalla de registro
-- `HomeScreen.tsx`: Pantalla principal
-- `MedicamentosScreen.tsx`: Listado de medicamentos
-- `DetailScreen.tsx`: Detalles de un medicamento
-- `RecoleccionesScreen.tsx`: Gestión de recolecciones
-- `FavoritosScreen.tsx`: Medicamentos favoritos
-- `HistorialScreen.tsx`: Historial de solicitudes
-- `UserScreen.tsx`: Perfil de usuario
-- `PackageScreen.tsx`: Información de paquetes
-- `PasswordRecoveryScreen.tsx`: Recuperación de contraseña
+### Funcionalidades
 
-#### Prototipo de CHATBOT
+| Área | Descripción |
+|---|---|
+| **Cuenta** | Registro, inicio de sesión y recuperación de contraseña. |
+| **Medicamentos** | Listado, búsqueda y detalle con disponibilidad por sede. |
+| **Recolecciones** | Paquete con varios medicamentos, fecha y hora; seguimiento y cancelación. |
+| **Favoritos** | Alertas cuando un medicamento guardado vuelve a estar disponible. |
+| **Historial y perfil** | Solicitudes anteriores y edición de datos personales. |
+| **Chatbot (beta)** | `HomeScreenChatBot.tsx`: renómbrala a `HomeScreen` para usarla como pantalla principal. |
 
-- `HomeScreenChatBot.tsx`: Para usar el prototipo del chatbot en estado BETA se pueden intercambiar los nombres
-de las screen, para que quede solo HomeScreen (pantalla de aterrizaje)
+**Arquitectura MVP:** `models/` (datos), `views/` (componentes y pantallas) y `presenters/` (lógica y consumo de la API con Axios).
 
-### Presentador (Presenters)
-Contiene la lógica de presentación que conecta los modelos con las vistas:
-- `AuthPresenter.ts`: Gestión de autenticación
-- `UserPresenter.ts`: Gestión de datos de usuario
-- `MedicamentoPresenter.ts`: Gestión de medicamentos
-- `RecoleccionPresenter.ts`: Gestión de recolecciones
-- `FavoritoPresenter.ts`: Gestión de favoritos
-Como tambien, contienen el consumo de API por medio de la configuracion del servicio con AXIOS usando await api.post
-y los demas metodos HTTP como GET, PUT, DELETE, etc.
+### Cómo ejecutarlo
 
-## Conexión con la API
-
-La aplicación se conecta a un backend a través de una API REST utilizando Axios:
-
-- La configuración base de la API se encuentra en `config/apiBase.ts`
-- Los servicios de API están en `services/api.ts`
-- Se utilizan interceptores para manejar la autenticación y los errores
-- La aplicación también implementa WebSockets para comunicación en tiempo real
-
-## Librerías Principales
-
-- **React Native**: Framework principal para el desarrollo de la aplicación móvil
-- **React Navigation**: Navegación entre pantallas
-- **Axios**: Cliente HTTP para realizar peticiones a la API
-- **Socket.io-client**: Cliente para comunicación en tiempo real
-- **AsyncStorage**: Almacenamiento local de datos
-- **React Native Vector Icons**: Iconos para la interfaz
-- **React Native Linear Gradient**: Efectos de gradiente
-- **React Native DateTimePicker**: Selector de fecha y hora
-- **JWT Decode**: Decodificación de tokens JWT
-
-## Instalación y Configuración
-
-### Requisitos Previos
-
-- Node.js (versión 18 o superior)
-- npm o yarn
-- React Native CLI
-- Android Studio (para desarrollo en Android)
-- Xcode (para desarrollo en iOS, solo macOS)
-- JDK 11 o superior
-
-### Pasos de Instalación
-
-1. Clonar el repositorio:
-   ```
-   git clone <url-del-repositorio>
-   cd MediFast
-   ```
-
-2. Instalar dependencias:
-   ```
+1. Requisitos: **Node.js 18+**, JDK 17 y Android Studio.
+2. Pon la URL del backend (local, ngrok o desplegado) en `config/apiBase.ts`.
+3. Ejecuta:
+   ```bash
    npm install
-   # o
-   yarn install
-   ```
-
-3. Configurar la URL de la API:
-   - Editar el archivo `config/apiBase.ts` con la URL correcta del backend
-
-### Ejecución en Modo Desarrollo
-
-1. Iniciar el servidor de Metro:
-   ```
    npx react-native start
-   ```
-
-2. En otra terminal, ejecutar la aplicación en android (USB con modo depuracion activado):
-   ```
    npx react-native run-android
    ```
 
-## Funcionalidades Principales
+> [!TIP]
+> Para generar el APK: `cd android && ./gradlew assembleRelease` (en Windows `gradlew assembleRelease`). Queda en `android/app/build/outputs/apk/release/`. Necesitas un keystore configurado en `~/.gradle/gradle.properties`.
 
-- **Autenticación**: Registro, inicio de sesión y recuperación de contraseña
-- **Consulta de Medicamentos**: Listado y búsqueda de medicamentos disponibles
-- **Detalles de Medicamentos**: Información detallada de cada medicamento
-- **Favoritos**: Guardar medicamentos como favoritos para acceso rápido
-- **Recolecciones**: Solicitar y gestionar recolecciones de medicamentos
-- **Historial**: Consultar el historial de solicitudes realizadas
-- **Perfil de Usuario**: Gestión de información personal
+---
 
-## Estructura de Navegación
+## English
 
-La aplicación utiliza React Navigation Stack Navigator para la navegación entre pantallas:
+> Mobile app for the MediFast degree project. Users browse medications, check availability per branch, build a package and schedule its pickup. Changes arrive in real time from the [backend](https://github.com/Drey0911/TG-MediFast-Dispensario-BACKEND).
 
-- Splash (pantalla inicial)
-- Login (inicio de sesión)
-- Register (registro)
-- PasswordRecovery (recuperación de contraseña)
-- Home (pantalla principal)
-- Medicamentos (listado de medicamentos)
-- Detail (detalles de medicamento)
-- Recolecciones (gestión de recolecciones)
-- Favoritos (medicamentos favoritos)
-- Historial (historial de solicitudes)
-- User (perfil de usuario)
-- Package (información de paquetes)
+### Features
 
-## Generación de APK para Android
+| Area | Description |
+|---|---|
+| **Account** | Sign up, sign in and password recovery. |
+| **Medications** | List, search and details with availability per branch. |
+| **Pickups** | Package with several medications, date and time; tracking and cancellation. |
+| **Favorites** | Alerts when a saved medication is available again. |
+| **History and profile** | Past requests and personal data editing. |
+| **Chatbot (beta)** | `HomeScreenChatBot.tsx`: rename it to `HomeScreen` to use it as the main screen. |
 
-Para construir el archivo APK de producción de MediFast, sigue estos pasos:
+**MVP architecture:** `models/` (data), `views/` (components and screens) and `presenters/` (logic and API calls with Axios).
 
-### Preparación de la versión
+### Getting started
 
-1. **Actualiza la versión en `android/app/build.gradle`:**
-   ```
-   android {
-       defaultConfig {
-           versionCode 1  // Incrementa este número en cada release
-           versionName "1.0"  // Cambia el número de versión
-       }
-   }
+1. Requirements: **Node.js 18+**, JDK 17 and Android Studio.
+2. Set the backend URL (local, ngrok or deployed) in `config/apiBase.ts`.
+3. Run:
+   ```bash
+   npm install
+   npx react-native start
+   npx react-native run-android
    ```
 
-2. **Genera el bundle de la aplicación:**
+> [!TIP]
+> To build the APK: `cd android && ./gradlew assembleRelease` (on Windows `gradlew assembleRelease`). It is saved in `android/app/build/outputs/apk/release/`. You need a keystore set in `~/.gradle/gradle.properties`.
 
-En linux 
+---
 
-   ```
-   cd android
-   ./gradlew bundleRelease
-   ```
+## Licencia · License
 
-En Windows
-
-   ```
-   cd android
-   gradlew bundleRelease
-   ```
-
-3. **Genera el APK de release:**
-
-En linux
-
-   ```
-   cd android
-   ./gradlew assembleRelease 
-   ```
-
-En Windows 
-
-   ```
-   cd android
-   gradlew assembleRelease 
-   ```
-
-4. **El APK generado se encuentra en:**
-   ```
-   android/app/build/outputs/apk/release/app-release.apk
-   ```
-
-### Requisitos previos para generar APK
-
-- Tener configurado correctamente el `keystore` para firmar la aplicación
-- Configurar las variables de entorno en `~/.gradle/gradle.properties`:
-  ```
-  MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
-  MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
-  MYAPP_UPLOAD_STORE_PASSWORD=*****
-  MYAPP_UPLOAD_KEY_PASSWORD=*****
-  ```
-
-### Instalación del APK
-
-Una vez generado el APK, puedes instalarlo directamente en un dispositivo Android
-
-## Licencia
-
-Todos los derechos reservados. © 2025 Andrey Stteven Mantilla Leon y Daniel Esteban Pinzon Cardenas.
-
-Este software es propiedad de sus creadores y no puede ser reproducido, distribuido o utilizado sin autorización expresa.
+Todos los derechos reservados · All rights reserved. © 2025 Andrey Stteven Mantilla Leon y Daniel Esteban Pinzon Cardenas. No puede ser reproducido, distribuido o utilizado sin autorización expresa · It may not be reproduced, distributed or used without express permission.
